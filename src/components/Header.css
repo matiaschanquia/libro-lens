@@ -3,6 +3,7 @@
     position: sticky;
     top: 0;
     box-shadow: 0 2px 4px 2px #00000038;
+    z-index: 99;
 }
 
 .container-header {
@@ -11,11 +12,19 @@
     align-items: center;
     width: 90%;
     max-width: 900px;
-    margin: 14px auto;
+    margin: 18px auto;
 }
 
 .container-header > h1 {
     font-size: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container-header > h1 > img {
+    width: 70px;
+    margin: -20px 0;
 }
 
 .btn-reading {

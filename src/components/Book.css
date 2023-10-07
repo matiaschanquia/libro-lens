@@ -1,0 +1,51 @@
+.article-book {
+    width: 90%;
+    max-width: 200px;
+    background-color: #000;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-book > img {
+    aspect-ratio: 9 / 13;
+    object-fit: cover;
+    width: 100%;
+}
+
+.article-book > h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 8px;
+}
+
+.btn-add-reading {
+    position: absolute;
+    top: 4px;
+    opacity: .7;
+    right: 4px;
+    border-radius: 50%;
+    border: none;
+    width: 44px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: opacity .1s ease;
+    background-color: #fff;
+}
+
+.btn-add-reading:hover {
+    opacity: 1;
+}
+
+.btn-add-reading > ion-icon {
+    font-size: 24px;
+    color: #ebc400;
+}

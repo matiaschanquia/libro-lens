@@ -1,3 +1,8 @@
 .section-books {
-    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 15px;
 }
+

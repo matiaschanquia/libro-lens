@@ -72,7 +72,7 @@
       "book": {
         "title": "Apocalipsis Zombie",
         "pages": 444,
-        "genre": "Zombies",
+        "genre": "Terror",
         "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1422626176i/24762432.jpg",
         "synopsis": "Un gallego se queda en casa en pleno apocalipsis zombie y acaba casi salvando el mundo",
         "year": 2001,
@@ -291,7 +291,7 @@
       "book": {
         "title": "Crimen y castigo",
         "pages": 551,
-        "genre": "Novela psicológica",
+        "genre": "Novela",
         "cover": "https://images.cdn1.buscalibre.com/fit-in/360x360/ea/1f/ea1fc691874fa49ce341d876a981e2c1.jpg",
         "synopsis": "La historia de Rodion Raskólnikov, un estudiante que comete un asesinato y enfrenta las consecuencias psicológicas y morales.",
         "year": 1866,
@@ -336,7 +336,7 @@
       "book": {
         "title": "Rayuela",
         "pages": 704,
-        "genre": "Novela experimental",
+        "genre": "Novela",
         "cover": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Rayuela_JC.png",
         "synopsis": "Una obra en la que el lector puede elegir diferentes caminos para recorrer la historia del protagonista, Horacio Oliveira.",
         "year": 1963,
@@ -351,7 +351,7 @@
       "book": {
         "title": "Mujer en punto cero",
         "pages": 146,
-        "genre": "Novela feminista",
+        "genre": "Novela",
         "cover": "https://images.cdn3.buscalibre.com/fit-in/360x360/2d/3f/2d3ffa381a03476087d518a459cc13b7.jpg",
         "synopsis": "La historia de una prisionera egipcia que enfrenta su destino con valentía y desafía las normas patriarcales.",
         "year": 1975,
@@ -414,7 +414,7 @@
       "book": {
         "title": "El guardian entre el centeno",
         "pages": 224,
-        "genre": "Novela psicológica",
+        "genre": "Novela",
         "cover": "https://images.cdn1.buscalibre.com/fit-in/360x360/08/0e/080ea011c406299e0166362d356ccc55.jpg",
         "synopsis": "La historia de Holden Caulfield, un adolescente en Nueva York, durante unos días turbulentos de su vida.",
         "year": 1951,
@@ -429,7 +429,7 @@
       "book": {
         "title": "Los pilares de la Tierra",
         "pages": 1120,
-        "genre": "Histórica",
+        "genre": "Historia",
         "cover": "https://images.cdn2.buscalibre.com/fit-in/360x360/77/c4/77c49fa72ff4ce2e0ee6239e77d1c25b.jpg",
         "synopsis": "La construcción de una catedral en el ficticio condado de Kingsbridge, Inglaterra, a lo largo de varias generaciones.",
         "year": 1989,

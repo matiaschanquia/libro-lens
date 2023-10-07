@@ -2,9 +2,8 @@
 .main {
     width: 90%;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: grid;
     grid-template-columns: .3fr 1fr;
-    border: 2px solid red;
     gap: 20px;
 }

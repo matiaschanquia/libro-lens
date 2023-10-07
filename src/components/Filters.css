@@ -1,3 +1,43 @@
 .section-filters {
-    border: 2px solid yellow;
+    padding: 12px;
+}
+
+.section-filters > h3 {
+    margin-bottom: 12px;
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.section-filters > h4 {
+    margin: 10px 0 6px;
+}
+
+.section-filters input, 
+.section-filters button,
+.section-filters select {
+    display: block;
+}
+
+.section-filters input,
+.section-filters select {
+    width: 100%;
+}
+
+.section-filters button {
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 14px;
+}
+
+.btn-pages {
+    margin: 0 auto 6px;
+}
+
+.btn-clear {
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.pages > p {
+    text-align: center;
 }

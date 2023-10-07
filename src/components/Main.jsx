@@ -5,7 +5,7 @@ import "./Main.css";
 const Main = (props) => {
     return (
         <main className="main">
-            <Filters />
+            <Filters generos={props.generos}/>
             <Books books={props.books}/>
         </main>
     )

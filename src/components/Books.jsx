@@ -6,7 +6,7 @@ const Books = (props) => {
         <section className="section-books">
             {
                 props.books.map(({book}) => (
-                    <Book title={book.title} key={book.title}/>
+                    <Book {...book} key={book.title}/>
                 ))
             }
         </section>
