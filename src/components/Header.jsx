@@ -6,7 +6,7 @@ const Header = (props) => {
             <div className="container-header">
                 <h1><img src="/src/assets/logo.png" alt="Libro Lens" /> Libro Lens</h1>
                 <button className="btn-reading">
-                    <span className="amount-reading">50</span>
+                    <span className="amount-reading">{props.reading.length}</span>
                     <ion-icon name="bookmarks-outline"></ion-icon>
                 </button>
             </div>
