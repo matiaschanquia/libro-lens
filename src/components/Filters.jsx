@@ -1,30 +1,36 @@
 import { useEffect, useState } from "react";
 import "./Filters.css";
+import { DIFERENCE_PAGES } from "../constants";
 
 const Filters = (props) => {
-    const [amountPages, setAmountPages] = useState(props.amountPages.min);
-    
-    const handlePages = e => {
-        setAmountPages(e.target.value);
+
+    const [pagesCurrentState, setPagesCurrentState] = useState(15);
+
+    const handlePagesCurrent = (e) => {
+        const pages = e.target.value;
+        setPagesCurrentState(pages);
+        props.handleAmountPagesCurrent(pages);
+        // console.log(pages);
     }
 
     useEffect(() => {
-        setAmountPages(props.amountPages.min)
+        setPagesCurrentState(props.amountPages.min);
+        // console.log(props.amountPages.min);
     }, [props.amountPages])
 
     return (
         <section className="section-filters">
             <h3>Filtros</h3>
             <h4>Búsqueda:</h4>
-            <input type="text" placeholder="Ingrese el libro..." name="title"/>
+            <input type="text" placeholder="Ingrese el libro..." name="title" onChange={props.handleTitle}/>
             <h4>Cantidad de páginas:</h4>
             <div className="pages">
                 <button className="btn-pages" onClick={props.handlePages}>{props.filters.pages ? "Desactivar" : "Activar" }</button>
                 {
                     !props.filters.pages ||
                     <div>
-                        <input type="range" min={props.amountPages.min} max={props.amountPages.max} step={1} name="pages" onChange={handlePages} value={amountPages}/>
-                        <p>Entre {amountPages - 15} y {Number(amountPages) + 15} páginas</p>
+                        <input type="range" min={props.amountPages.min} max={props.amountPages.max} step={1} name="pages" onChange={handlePagesCurrent} value={pagesCurrentState} />
+                        <p>Entre {(pagesCurrentState - DIFERENCE_PAGES) < 0 ? pagesCurrentState : pagesCurrentState - DIFERENCE_PAGES} y {Number(pagesCurrentState) + DIFERENCE_PAGES} páginas</p>
                     </div>
                 }
             </div>

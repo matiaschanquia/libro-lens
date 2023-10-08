@@ -1,6 +1,7 @@
 .article-book {
     width: 90%;
     max-width: 170px;
+    max-height: 322px;
     background-color: #fff;
     border-radius: 6px;
     overflow: hidden;

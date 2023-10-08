@@ -4,12 +4,10 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { getAllBooks } from "./services/book";
+import { getNowDate } from "./utils/dayjs";
+import { INITIAL_FILTERS } from "./constants";
 
-const INITIAL_FILTERS = {
-    title: "",
-    pages: true,
-    genre: "",
-}
+
 
 const objGeneros = {};
 
@@ -21,8 +19,9 @@ function App() {
   const [generos, setGeneros] = useState([]);
   const [amountPages, setAmountPages] = useState({
     min: 15,
-    max: 30
+    max: 45
   });
+  const [amountPagesCurrent, setAmountPagesCurrent] = useState(15);
   const [reading, setReading] = useState([])
 
   useEffect(() => {
@@ -42,6 +41,7 @@ function App() {
         min: min,
         max: max
       });
+      setAmountPagesCurrent(min);
 
       const arrayGenerosOrdenado = arrayGeneros.sort()
 
@@ -83,15 +83,32 @@ function App() {
     const bookToAdd = books.filter(({book}) => {
       return book.title === bookTitle;
     })[0];
-    setReading([...reading, bookToAdd]);
-    localStorage.setItem("readingList", reading);
+
+    bookToAdd.book.date = getNowDate().format();
+
+    const newReading = [...reading, bookToAdd];
+
+    setReading([...newReading]);
+    localStorage.setItem("readingList", JSON.stringify([...newReading]));
   }
 
+  const handleTitle = (e) => {
+    setFilters({
+      ...filters,
+      title: e.target.value,
+    });
+  }
+
+  const handleAmountPagesCurrent = (pages) => {
+    setAmountPagesCurrent(Number(pages));
+  }
+ 
   return (
     <div className="container-app">
-      <Header reading={reading} />
+      <Header reading={reading} amountPagesCurrent={amountPagesCurrent}/>
       <Main books={books} generos={generos} amountPages={amountPages} filters={filters} orderBy={orderBy} 
-            handleOrderBy={handleOrderBy} handlePages={handlePages}/>
+            handleOrderBy={handleOrderBy} handlePages={handlePages} addBookReading={addBookReading} reading={reading}
+            handleTitle={handleTitle} amountPagesCurrent={amountPagesCurrent} handleAmountPagesCurrent={handleAmountPagesCurrent} />
       <Footer />
     </div>
   )

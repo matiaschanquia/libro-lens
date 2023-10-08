@@ -59,7 +59,7 @@
     margin-left: 20px;
 }
 
-.btn-close-modal-article {
+.btn-close-modal {
     width: 30px;
     aspect-ratio: 1;
     position: absolute;
@@ -68,23 +68,24 @@
     cursor: pointer;
 }
 
-.btn-close-modal-article::after,
-.btn-close-modal-article::before {
+.btn-close-modal::after,
+.btn-close-modal::before {
     content: "";
     box-sizing: border-box;
     border-radius: 10px;
     position: absolute;
     top: 50%;
+    left: 0;
     width: 100%;
     border: 2px solid #000;
     background-color: #000;
 }
 
-.btn-close-modal-article::after {
+.btn-close-modal::after {
     transform: rotate(-45deg);
 }
 
-.btn-close-modal-article::before {
+.btn-close-modal::before {
     transform: rotate(45deg);
 }
 

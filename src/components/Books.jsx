@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Book from "./Book";
 import "./Books.css";
+import { quitarTildes } from "../utils/quitarTildes";
+import { DIFERENCE_PAGES } from "../constants";
 
 const Books = (props) => {
     const [isModalActive, setIsModalActive] = useState(true);
@@ -46,20 +48,41 @@ const Books = (props) => {
         setIsModalActive(false);
     }
 
+    const filterReading = (books) => {
+        return books.filter((bookMain) => {
+            return !props.reading.some((itemSecond) => {
+                return itemSecond.book.title === bookMain.book.title;
+            });
+        });
+    }
+
+    const handleAddReading = () => {
+        setIsModalActive(false);
+        props.addBookReading(bookModal.book.title)
+    }
+
     return (
         <section className="section-books">
             {
-                orderBy(props.books)
+                orderBy(filterReading(props.books))
+                    .filter(({book}) => {
+                        return quitarTildes(book.title.toLowerCase()).includes(quitarTildes(props.filters.title.toLowerCase()));
+                    })
+                    .filter(({book}) => {
+                        if(!props.filters.pages) return true;
+                        return !!(book.pages >= props.amountPagesCurrent - DIFERENCE_PAGES && book.pages <= props.amountPagesCurrent + DIFERENCE_PAGES);
+                    })
                     .map(({book}) => (
-                    <Book {...book} key={book.title} openModal={openModal} closeModal={closeModal} />
+                    <Book {...book} key={book.title} openModal={openModal} closeModal={closeModal} 
+                          addBookReading={props.addBookReading}/>
                 ))
             }
             {
                 (isModalActive && bookModal.book) ? (
                     <div className="modal-article" onClick={closeModal}>
                         <div className="container-modal-article" onClick={e => e.stopPropagation()}>
-                            <span className="btn-close-modal-article" onClick={closeModal}></span>
-                            <button className="btn-add-reading modal" >
+                            <span className="btn-close-modal" onClick={closeModal}></span>
+                            <button className="btn-add-reading modal"  onClick={handleAddReading} >
                                 <ion-icon name="bookmark-outline"></ion-icon>
                             </button>
                             <img src={bookModal.book.cover} alt={bookModal.book.title} />

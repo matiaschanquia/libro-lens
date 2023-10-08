@@ -26,6 +26,7 @@ const Book = (props) => {
 
     const addReading = (e) => {
         e.stopPropagation();
+        props.addBookReading(props.title);
     }
 
     return (
