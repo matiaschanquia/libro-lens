@@ -7,14 +7,12 @@ import { getAllBooks } from "./services/book";
 import { getNowDate } from "./utils/dayjs";
 import { INITIAL_FILTERS } from "./constants";
 
-
-
 const objGeneros = {};
 
 function App() {
 
   const [books, setBooks] = useState([]);
-  const [filters, setFilters] = useState(INITIAL_FILTERS);
+  const [filters, setFilters] = useState({...INITIAL_FILTERS});
   const [orderBy, setOrderBy] = useState(0); // 0: por abecedario, 1: fecha de publicacion
   const [generos, setGeneros] = useState([]);
   const [amountPages, setAmountPages] = useState({
@@ -102,13 +100,25 @@ function App() {
   const handleAmountPagesCurrent = (pages) => {
     setAmountPagesCurrent(Number(pages));
   }
+  
+  const handleGenre = (e) => {
+    setFilters({
+      ...filters,
+      genre: e.target.value,
+    })
+  }
+
+  const handleResetFilters = () => {
+    setFilters({...INITIAL_FILTERS});
+    setOrderBy(0);
+  }
  
   return (
     <div className="container-app">
       <Header reading={reading} amountPagesCurrent={amountPagesCurrent}/>
       <Main books={books} generos={generos} amountPages={amountPages} filters={filters} orderBy={orderBy} 
             handleOrderBy={handleOrderBy} handlePages={handlePages} addBookReading={addBookReading} reading={reading}
-            handleTitle={handleTitle} amountPagesCurrent={amountPagesCurrent} handleAmountPagesCurrent={handleAmountPagesCurrent} />
+            handleTitle={handleTitle} amountPagesCurrent={amountPagesCurrent} handleAmountPagesCurrent={handleAmountPagesCurrent} handleGenre={handleGenre} handleResetFilters={handleResetFilters} />
       <Footer />
     </div>
   )

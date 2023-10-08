@@ -8,8 +8,8 @@ const Main = (props) => {
             <Filters generos={props.generos} amountPages={props.amountPages} 
                      filters={props.filters} handleOrderBy={props.handleOrderBy}
                      handlePages={props.handlePages} handleTitle={props.handleTitle}
-                     amountPagesCurrent={props.amountPagesCurrent} 
-                     handleAmountPagesCurrent={props.handleAmountPagesCurrent} />
+                     amountPagesCurrent={props.amountPagesCurrent} handleResetFilters={props.handleResetFilters}
+                     handleAmountPagesCurrent={props.handleAmountPagesCurrent} handleGenre={props.handleGenre}/>
             <Books books={props.books} orderBy={props.orderBy} addBookReading={props.addBookReading} 
                    reading={props.reading} filters={props.filters} amountPagesCurrent={props.amountPagesCurrent}/>
         </main>

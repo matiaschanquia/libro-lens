@@ -22,7 +22,7 @@ const Filters = (props) => {
         <section className="section-filters">
             <h3>Filtros</h3>
             <h4>Búsqueda:</h4>
-            <input type="text" placeholder="Ingrese el libro..." name="title" onChange={props.handleTitle}/>
+            <input type="text" placeholder="Ingrese el libro..." name="title" onChange={props.handleTitle} value={props.filters.title}/>
             <h4>Cantidad de páginas:</h4>
             <div className="pages">
                 <button className="btn-pages" onClick={props.handlePages}>{props.filters.pages ? "Desactivar" : "Activar" }</button>
@@ -35,7 +35,7 @@ const Filters = (props) => {
                 }
             </div>
             <h4>Género:</h4>
-            <select name="generos">
+            <select name="generos" onChange={props.handleGenre} value={props.filters.genre}>
                 <option value="all">Todos los géneros</option>
                 {
                     props.generos.map(genero => (
@@ -48,7 +48,7 @@ const Filters = (props) => {
                 <option value="0">Abecedario</option>
                 <option value="1">Año de publicación</option>
             </select>
-            <button className="btn-clear">Limpiar</button>
+            <button className="btn-clear" onClick={props.handleResetFilters}>Limpiar</button>
         </section>
     )
 }

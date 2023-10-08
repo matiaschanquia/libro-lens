@@ -70,7 +70,11 @@ const Books = (props) => {
                     })
                     .filter(({book}) => {
                         if(!props.filters.pages) return true;
-                        return !!(book.pages >= props.amountPagesCurrent - DIFERENCE_PAGES && book.pages <= props.amountPagesCurrent + DIFERENCE_PAGES);
+                        return (book.pages >= props.amountPagesCurrent - DIFERENCE_PAGES && book.pages <= props.amountPagesCurrent + DIFERENCE_PAGES);
+                    })
+                    .filter(({book}) => {
+                        if(props.filters.genre === "all") return true;
+                        return book.genre === props.filters.genre;
                     })
                     .map(({book}) => (
                     <Book {...book} key={book.title} openModal={openModal} closeModal={closeModal} 
@@ -89,6 +93,7 @@ const Books = (props) => {
                             <div>
                                 <h2>{bookModal.book.title}</h2>
                                 <p>Autor: {bookModal.book.author.name}</p>
+                                <p>Genero: {bookModal.book.genre}</p>
                                 <p>Descripción: {bookModal.book.synopsis}</p>
                                 <p>Año de publicación: {yearPublication(bookModal.book.year)}</p>
                                 <p>Páginas: {bookModal.book.pages}</p>
