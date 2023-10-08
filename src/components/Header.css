@@ -86,6 +86,7 @@
     text-align: center;
     padding: 20px;
     position: relative;
+    animation: normal 1 movimiento .3s;
 }
 
 .container-modal-reading > h2 {

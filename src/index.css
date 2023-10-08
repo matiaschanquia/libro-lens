@@ -24,3 +24,12 @@ a {
 li {
   list-style: none;
 }
+
+@keyframes movimiento {
+  from {
+      transform: translateY(-100vh);
+  }
+  to {
+      transform: translate(0);
+  }
+}

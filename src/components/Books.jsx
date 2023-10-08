@@ -57,7 +57,6 @@ const Books = (props) => {
     }
 
     const handleAddReading = () => {
-        setIsModalActive(false);
         props.addBookReading(bookModal.book.title)
     }
 
@@ -93,7 +92,7 @@ const Books = (props) => {
                             <div>
                                 <h2>{bookModal.book.title}</h2>
                                 <p>Autor: {bookModal.book.author.name}</p>
-                                <p>Genero: {bookModal.book.genre}</p>
+                                <p>Género: {bookModal.book.genre}</p>
                                 <p>Descripción: {bookModal.book.synopsis}</p>
                                 <p>Año de publicación: {yearPublication(bookModal.book.year)}</p>
                                 <p>Páginas: {bookModal.book.pages}</p>

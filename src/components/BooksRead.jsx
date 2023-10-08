@@ -50,7 +50,8 @@ const BooksRead = (props) => {
                     [...props.reading]
                         .reverse()
                         .map(({book}) => (
-                            <BookRead {...book} key={book.title} readingLength={readingLength}/>
+                            <BookRead {...book} key={book.title} readingLength={readingLength}
+                                      handleRemoveReading={props.handleRemoveReading} />
                         ))
                 }
             </div>

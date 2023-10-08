@@ -27,8 +27,8 @@ const Header = (props) => {
                 <div className="modal-reading" onClick={handleCloseReading}>
                     <div className="container-modal-reading" onClick={e => e.stopPropagation()}>
                         <span className="btn-close-modal reading" onClick={handleCloseReading}></span>
-                        <h2>{props.reading.length ? "Lista para leer" : "No has agregado elementos a leer"}</h2>
-                        <BooksRead reading={props.reading}/>
+                        <h2>{props.reading.length ? "Libros por leer" : "No tienes libros por leer"}</h2>
+                        <BooksRead reading={props.reading} handleRemoveReading={props.handleRemoveReading} />
                     </div>
                 </div>
             }

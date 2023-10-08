@@ -20,7 +20,7 @@ function App() {
     max: 45
   });
   const [amountPagesCurrent, setAmountPagesCurrent] = useState(15);
-  const [reading, setReading] = useState([])
+  const [reading, setReading] = useState([]);
 
   useEffect(() => {
     if(books.length && generos.length === 0) {
@@ -112,10 +112,19 @@ function App() {
     setFilters({...INITIAL_FILTERS});
     setOrderBy(0);
   }
+
+  const handleRemoveReading = (bookTitle) => {
+    const newBooksReading = reading.filter(({book}) => {
+      return !(book.title === bookTitle);
+    });
+
+    localStorage.setItem("readingList", JSON.stringify([...newBooksReading]));
+    setReading([...newBooksReading]);
+  }
  
   return (
     <div className="container-app">
-      <Header reading={reading} amountPagesCurrent={amountPagesCurrent}/>
+      <Header reading={reading} amountPagesCurrent={amountPagesCurrent} handleRemoveReading={handleRemoveReading} />
       <Main books={books} generos={generos} amountPages={amountPages} filters={filters} orderBy={orderBy} 
             handleOrderBy={handleOrderBy} handlePages={handlePages} addBookReading={addBookReading} reading={reading}
             handleTitle={handleTitle} amountPagesCurrent={amountPagesCurrent} handleAmountPagesCurrent={handleAmountPagesCurrent} handleGenre={handleGenre} handleResetFilters={handleResetFilters} />

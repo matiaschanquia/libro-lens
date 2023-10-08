@@ -7,10 +7,9 @@ const BookRead = (props) => {
         width: `${100 / props.readingLength}%`
     }
 
-
     return (
         <div className="book-read" style={styles}>
-            <button className="btn-check-book">
+            <button className="btn-check-book" onClick={e => props.handleRemoveReading(props.title)}>
                 <ion-icon name="checkmark-done-outline"></ion-icon>
             </button>
             <img src={props.cover} alt={props.title} />
