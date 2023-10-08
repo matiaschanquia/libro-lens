@@ -1,5 +1,5 @@
 export const getAllBooks = () => {
-    return fetch("/src/books.json")
+    return fetch("/books.json")
         .then(res => res.json())
         .then(data => {
             return data.library;
