@@ -5,7 +5,7 @@
 .container-books-read {
     position: relative;
     display: flex;
-    gap: 20px;
+    gap: 0;
     transform: translateX(0);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .btn.left {
-    left: 25px;
+    left: 34px;
 }
 
 .btn.left:disabled {
@@ -41,7 +41,7 @@
 }
 
 .btn.right {
-    right: 25px;
+    right: 34px;
 }
 
 .btn.right:disabled {
