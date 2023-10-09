@@ -10,19 +10,19 @@ Proyecto inspirado en una [prueba técnica compartida por Midudev](https://githu
 La vista principal es la siguiente:
 
 <p align="center" >
-     <img src="/readme/preview-1.jpg">
+     <img src="./public/readme/preview-1.jpg">
 </p>
 
 Al hacer click en un libro de la pantalla principal se activa un modal que se ve de la siguiente manera:
 
 <p align="center" >
-     <img src="/readme/preview-2.jpg">
+     <img src="./public/readme/preview-2.jpg">
 </p>
 
 Al hacer click en el icono de la parte superior derecha se activa un modal en el que figura los libros seleccionados para leer:
 
 <p align="center" >
-     <img src="/readme/preview-4.jpg">
+     <img src="./public/readme/preview-4.jpg">
 </p>
 
 ## Funcionalidades
@@ -34,3 +34,9 @@ Al hacer click en el icono de la parte superior derecha se activa un modal en el
 - Resetear los filtros.
 - Guardar libro en una lista por leer.
 - Quitar libro de la lista por leer.
+
+En la siguiente imagen se pueden ver los filtros:
+
+<p align="center" >
+     <img width="240" src="./public/readme/preview-3.jpg">
+</p>
