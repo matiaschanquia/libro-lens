@@ -1,5 +1,8 @@
 .section-filters {
-    padding: 12px;
+    padding: 0 12px 12px;
+    position: sticky;
+    top: 98px;
+    z-index: 1;
 }
 
 .section-filters > h3 {
@@ -60,5 +63,12 @@
 @media screen and (max-width: 400px) {
     .section-filters {
         border-bottom: 2px solid #000;
+        position: static;
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .section-filters {
+        position: static;
     }
 }

@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: .35fr 1fr;
     gap: 20px;
+    align-items: start;
 }
 
 @media screen and (max-width: 930px) {

@@ -63,3 +63,10 @@
     font-size: 24px;
     color: var(--color-yellow);
 }
+
+@media screen and (max-width: 400px) {
+    .article-book {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
